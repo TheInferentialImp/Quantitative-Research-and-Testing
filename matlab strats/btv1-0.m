@@ -1,5 +1,5 @@
 % Author: Alexander Yousif (730622857)
-% This is a simple backtesting strategy written using MATLAB that implements 
+% This is a VERY simple example of a backtesting strategy written using MATLAB that implements 
 % max. holding period, stop loss, take profit, and s/f moving average features.
 % It will output a graphical representation of our profit and loss for each stock.
 % It will only enter trades when a stock x's volume is above an n threshold.
