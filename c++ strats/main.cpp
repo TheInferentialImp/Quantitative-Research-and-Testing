@@ -5,7 +5,7 @@
 #include <fstream>
 using namespace std;
 // Define function to calculate Bollinger Bands
-void calcBollingerBands(double *price, int n, double &upperBand,
+void calcBollingerBands(double *price,double &upperBand,
 double &lowerBand) {
     double sum = 0.0, sumSquared = 0.0, mean = 0.0, sd = 0.0;
     int m = 20;  // number of periods to calculate mean and standard deviation
