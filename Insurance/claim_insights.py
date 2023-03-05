@@ -88,9 +88,8 @@ plt.title('Total Incurred by State')
 plt.xlabel('Loss State')
 plt.ylabel('')
 plt.show()
-# Visualize distribution of claims by CAT Event
-import matplotlib.pyplot as plt
 
+# Visualize distribution of claims by CAT Event
 cat_event_dist.plot(kind='bar', x='CAT_Event', y='count_claims', rot=0, legend=False)
 plt.title('Distribution of Claims by CAT Event')
 plt.xlabel('CAT Event')
@@ -98,8 +97,6 @@ plt.ylabel('Number of Claims')
 plt.show()
 
 # Visualize causes of loss
-import seaborn as sns
-
 sns.barplot(x='count_claims', y='Cause_of_Loss', data=causes_of_loss, color='b')
 plt.title('Causes of Loss')
 plt.xlabel('Number of Claims')
