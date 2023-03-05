@@ -2,7 +2,7 @@
 % This is a VERY simple example of a backtesting strategy written using MATLAB that implements 
 % max. holding period, stop loss, take profit, and s/f moving average features.
 % It will output a graphical representation of our profit and loss for each stock.
-% It will only enter trades when a stock x's volume is above an n threshold.
+% It will only enter trades when a stock x volume is above an n threshold.
 
 % Load the data
 data = csvread('data.csv'); % Replace with actual data for 10 blue-chip stocks
