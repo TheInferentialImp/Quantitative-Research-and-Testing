@@ -123,17 +123,6 @@ sumTR += tr; }
     stopLoss = price[n-1] - 2 * atr;
     return stopLoss;
 }
-// Define function to calculate portfolio value
-double calcPortfolioValue(double *price, double *position, double
-cash, int n) {
-    double portfolioValue = 0.0;
-    for (int i = 0; i < n; i++) {
-        portfolioValue += position[i] * price[i];
-    }
-    portfolioValue += cash;
-    return portfolioValue;
-}
- 
  // Define function to calculate total return
 double calcTotalReturn(double *price, double *position, double cash,
 int n) {
