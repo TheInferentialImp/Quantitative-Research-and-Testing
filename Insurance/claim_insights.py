@@ -30,7 +30,7 @@ import matplotlib.ticker as mtick
 import seaborn as sns
 
 # read in data from Excel file
-claims_data = pd.read_excel("data.xlsx")
+claims_data = pd.read_excel("data.xlsx") # replace with actual claims data
 
 # convert column names to snake_case
 claims_data.columns = claims_data.columns.str.replace(" ", "_")

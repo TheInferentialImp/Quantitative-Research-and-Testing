@@ -6,7 +6,7 @@ library(dplyr)
 library(readxl)
 library(lubridate)
 
-claims_data <- read_excel("/Users/onyx/Documents/COMP 110/comp110-22f-workspace/exercises/data.xlsx")
+claims_data <- read_excel("data.xlsx") # replace with actual claims data
 
 # convert column names to snake_case if they have spaces!
 names(claims_data) <- gsub(" ", "_", names(claims_data))
