@@ -1,0 +1,126 @@
+Reporting lag in days: 
+Distribution of claims by CAT Event: 
+       CAT_Event  count_claims  total_incurred
+0  Hurricane DEF          6932    4.555005e+11
+1  Hurricane ABC          3440    2.943698e+11
+2  Hurricane GHI          3306    1.087980e+11
+
+Percentage of claims with no close date: 31.27% 
+
+
+Value of unclosed claims: $168,021,742,490.00 
+
+
+
+Average time to close claims by TPA: 
+       TPA           avg_time_to_close
+4   TPA238            33 days 00:00:00
+6   TPA240            88 days 00:00:00
+5   TPA239            90 days 00:00:00
+8   TPA242           119 days 00:00:00
+14  TPA248           137 days 09:36:00
+0   TPA234 147 days 08:17:51.244635194
+7   TPA241 158 days 16:56:28.235294118
+3   TPA237           163 days 18:40:00
+2   TPA236 176 days 11:44:25.557404326
+1   TPA235           180 days 13:48:00
+13  TPA247           183 days 23:44:00
+12  TPA246 213 days 10:50:11.634349032
+9   TPA243 236 days 21:59:48.871715612
+10  TPA244 264 days 23:33:03.884892088
+11  TPA245 287 days 14:36:59.548872180
+
+Total Incurred by MGA and TPA: 
+       MGA     TPA  total_incurred
+19  MGA136  TPA245    2.741642e+11
+2   MGA125  TPA234    1.542501e+11
+25  MGA141  TPA246    1.504258e+11
+23  MGA139  TPA240    1.023667e+11
+10  MGA131  TPA244    7.175665e+10
+24  MGA140  TPA247    3.149275e+10
+0   MGA123  TPA234    2.544573e+10
+3   MGA126  TPA236    1.537665e+10
+14  MGA134  TPA243    9.325565e+09
+21  MGA137  TPA246    3.721486e+09
+26  MGA142  TPA245    2.200249e+09
+22  MGA138  TPA244    1.925270e+09
+1   MGA124  TPA235    1.892097e+09
+8   MGA131  TPA237    1.605440e+09
+5   MGA128  TPA236    1.512789e+09
+16  MGA136  TPA236    1.180401e+09
+4   MGA127  TPA236    1.142445e+09
+7   MGA130  TPA237    8.171082e+08
+18  MGA136  TPA241    4.069645e+08
+28  MGA143  TPA245    2.463331e+08
+11  MGA132  TPA237    2.125849e+08
+15  MGA135  TPA236    1.521925e+08
+20  MGA137  TPA242    1.085292e+08
+27  MGA142  TPA248    7.154460e+07
+12  MGA134  TPA236    5.000000e+06
+17  MGA136  TPA240    0.000000e+00
+6   MGA130  TPA236    0.000000e+00
+13  MGA134  TPA239    0.000000e+00
+9   MGA131  TPA238    0.000000e+00
+
+Causes of Loss: 
+        Cause_of_Loss  count_claims  total_incurred
+11          Windstorm         12247    7.189094e+11
+9        Water Damage          1121    1.317560e+11
+3                Hail           208    3.972764e+09
+7                Rain            26    7.624047e+08
+10  Water Damage-Rain            26    1.312743e+09
+2   Flood - Hurricane            18    2.896441e+08
+6        Other Perils            11    1.277376e+09
+4               Other             6    4.005000e+06
+0                  BI             5    1.376655e+08
+1               Flood             5    2.179940e+07
+8      Tropical Storm             3    7.608450e+07
+5      Other - Legacy             2    1.484124e+08
+
+Distribution of claims by Loss State: 
+  Loss_State  count_claims  total_incurred
+6         NV          8343    5.111366e+11
+8         WA          2568    2.058603e+11
+5         NM          1785    5.093103e+10
+1         CA           764    8.613661e+10
+2         MI            73    2.127666e+09
+4         NJ            65    5.861574e+08
+0         AK            62    1.290808e+09
+7         SD            10    4.493540e+08
+3         ND             8    1.497540e+08
+
+Total Incurred by Transaction Period: 
+   Transaction_Period  total_incurred
+0          2018-03-31    1.009001e+10
+1          2018-04-30    3.079595e+11
+2          2018-05-31    1.806345e+11
+3          2018-06-30    1.338197e+11
+4          2018-07-31    3.826302e+10
+5          2018-08-31    7.592296e+10
+6          2018-09-30    1.805156e+09
+7          2018-10-31    6.325824e+10
+8          2018-11-30    1.034300e+10
+9          2018-12-31    1.153373e+10
+10         2019-01-31    1.024190e+10
+11         2019-02-28    1.136149e+10
+12         2019-03-31    2.469661e+09
+13         2019-04-30    9.654620e+08
+
+Total Paid vs Total Reserve: 
+                 Total_Paid  Total_Reserve
+total_paid     6.906466e+11            NaN
+total_reserve           NaN   1.680215e+11
+
+Top Claims by Total Incurred: 
+       Claim_Number     MGA     TPA  Total_Incurred
+10516     123458456  MGA139  TPA240    5.103000e+10
+7124      123458098  MGA139  TPA240    5.005500e+10
+6501      123458039  MGA136  TPA245    3.545000e+10
+11672     123458621  MGA141  TPA246    1.497717e+10
+5409      123457931  MGA131  TPA244    1.314600e+10
+6698      123458058  MGA136  TPA245    1.275750e+10
+5973      123457988  MGA136  TPA245    1.224009e+10
+6834      123458072  MGA136  TPA245    8.941220e+09
+6687      123458057  MGA136  TPA245    8.300090e+09
+12544     123458735  MGA141  TPA246    8.135518e+09
+

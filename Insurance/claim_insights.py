@@ -26,9 +26,9 @@ The libraries used in this code are pandas, numpy, matplotlib, and seaborn. Pand
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.ticker as mtick
 import seaborn as sns
-
+import geopandas as gpd
+plt.rcParams['figure.figsize'] = [30, 13]
 # read in data from Excel file
 claims_data = pd.read_excel("data.xlsx") # replace with actual claims data
 
@@ -80,17 +80,31 @@ total_paid_vs_total_reserve = claims_data.agg(total_paid=('Total_Paid', 'sum'), 
 # Top Claims by Total Incurred
 top_claims_by_total_incurred = claims_data.sort_values('Total_Incurred', ascending=False).loc[:, ['Claim_Number', 'MGA', 'TPA', 'Total_Incurred']].head(10)
 
-total_incurred_by_state = pd.pivot_table(data=claims_data, values='Total_Incurred', index='Loss_State', aggfunc='sum')
-
 # Create a heatmap
+total_incurred_by_state = pd.pivot_table(data=claims_data, values='Total_Incurred', index='Loss_State', aggfunc='sum')
+total_incurred_by_state = total_incurred_by_state.sort_values('Total_Incurred', ascending=False)
 sns.heatmap(data=total_incurred_by_state, cmap='YlOrRd', annot=True, fmt='.2f', linewidths=.5)
 plt.title('Total Incurred by State')
-plt.xlabel('Loss State')
-plt.ylabel('')
+plt.ylabel('Loss State')
 plt.show()
 
+
+
+# Create a heat geo-map(USA) with total incurred by state
+usa = '/Users/onyx/Downloads/cb_2018_us_state_500k/cb_2018_us_state_500k.shp'
+usa_map = gpd.read_file(usa)
+total_incurred_by_state_rounded = total_incurred_by_state
+total_incurred_by_state_rounded['Total_Incurred'] = total_incurred_by_state['Total_Incurred'].astype(int)
+
+# # Merge total_incurred_by_state with usa_map
+merged = usa_map.merge(total_incurred_by_state_rounded, how='left', left_on='STUSPS', right_index=True)
+merged['Total_Incurred'] = merged['Total_Incurred'].fillna(0)
+merged.plot(column='Total_Incurred', cmap='OrRd', legend=True, figsize=[100, 20])
+
+print(merged)
+
 # Visualize distribution of claims by CAT Event
-cat_event_dist.plot(kind='bar', x='CAT_Event', y='count_claims', rot=0, legend=False)
+cat_event_dist.plot(kind='bar', x='CAT_Event', y='count_claims', rot=0, legend=False, facecolor='green', color= 'lightgrey', edgecolor= 'red', hatch= '///' , label = 'Missing values')
 plt.title('Distribution of Claims by CAT Event')
 plt.xlabel('CAT Event')
 plt.ylabel('Number of Claims')
@@ -115,8 +129,8 @@ with open("insights.txt", "w") as f:
     f.write("Reporting lag in days: \n")
     f.write("Distribution of claims by CAT Event: \n")
     f.write(str(cat_event_dist) + "\n\n")
-    f.write("Percentage of claims with no close date: {:.2f}% \n".format(percent_unclosed_claims))
-    f.write("Value of unclosed claims: ${:,.2f} \n\n".format(value_unclosed_claims))
+    f.write("Percentage of claims with no close date: {:.2f}% \n".format(percent_unclosed_claims) + "\n\n")
+    f.write("Value of unclosed claims: ${:,.2f} \n\n".format(value_unclosed_claims) + "\n\n")
     f.write("Average time to close claims by TPA: \n")
     f.write(str(time_to_close) + "\n\n")
     f.write("Total Incurred by MGA and TPA: \n")
