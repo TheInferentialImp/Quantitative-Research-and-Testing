@@ -6,17 +6,17 @@ library(dplyr)
 library(readxl)
 library(lubridate)
 
-claims_data <- read_excel("data.xlsx") # replace with actual claims data
+claims_data <- read_excel("/Users/onyx/Documents/Quantitative-Research-and-Testing/data.xlsx") # replace with actual claims data
 
 # convert column names to snake_case if they have spaces!
 names(claims_data) <- gsub(" ", "_", names(claims_data))
 
 # calculate reporting_lag in days
-claims_data <- claims_data %>% 
+claims_data <- claims_data %>%
   mutate(reporting_lag = as.Date(Reported_Date, format = "%m/%d/%Y") - as.Date(Loss_Date, format = "%m/%d/%Y"))
 
 # select relevant columns
-claims_data <- claims_data %>% 
+claims_data <- claims_data %>%
   select(Claim_Number, CAT_Event, MGA, TPA, Cause_of_Loss, Loss_Date, Reported_Date, Closed_Date, Transaction_Period, Total_Paid, Total_Reserve, Total_Incurred, Total_Outstanding, Loss_State)
 
 # Distribution of claims by CAT Event
@@ -33,7 +33,7 @@ percent_unclosed_claims <- claims_data %>%
 value_of_unclosed_claims <- claims_data %>%
   filter(is.na(Closed_Date)) %>%
   summarise(value_unclosed = sum(Total_Incurred))
-              
+
 # Time to Close Claims
 time_to_close <- claims_data %>%
   mutate(time_to_close = as.Date(Closed_Date, format = "%m/%d/%Y") - as.Date(Reported_Date, format = "%m/%d/%Y")) %>%

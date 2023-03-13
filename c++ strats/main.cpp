@@ -73,8 +73,8 @@ double calcFRAMA(double *price, int n) {
     for (int i = 1; i < n; i++) {
         double diff = abs(price[i] - frama);
         framaLong = alpha * price[i] + (1 - alpha) * framaLong;
-        framaShort = delta * (price[I] + (1 - delta) * framaShort
-        price[i] - price[i-1]) + (1 - delta) * framaShort;
+        framaShort = delta * (price[i] + (1 - delta)) * framaShort;
+        (price[i] - price[i-1]) + (1 - delta) * framaShort;
         if (diff != 0) {
             alpha = pow(delta / diff, 2);
         }
@@ -97,8 +97,7 @@ double calcVWAP(double *price, double *volume, int n) {
 double calcVolatility(double *price, int n) {
     double sum = 0.0, sumSquared = 0.0, mean = 0.0, sd = 0.0,
 volatility = 0.0;
-    int m = 20;  // number of periods to calculate mean and standard
-deviation
+    int m = 20;  // number of periods to calculate mean and standard deviation
     for (int i = 0; i < m; i++) {
         sum += price[i];
         sumSquared += pow(price[i], 2);
@@ -146,8 +145,7 @@ cash, int n, int years) {
 double calcVolatility(double *price, int n) {
     double sum = 0.0, sumSquared = 0.0, mean = 0.0, sd = 0.0,
 volatility = 0.0;
-    int m = 20;  // number of periods to calculate mean and standard
-deviation
+    int m = 20;  // number of periods to calculate mean and standard deviation
     for (int i = 0; i < m; i++) {
         sum += price[i];
         sumSquared += pow(price[i], 2);
@@ -252,9 +250,8 @@ int main() {
         price[i] = 100.0 + (double)i;
     }
     // Calculate indicators
-    calcMomentum(price, momentum, n);
-    calcBollingerBands(price, bollingerBandsUpper,
-bollingerBandsLower, n);
+    calcMomentum(price, n);
+    calcBollingerBands(price, bollingerBandsUpper, bollingerBandsLower);
     calcVolume(price, volume, n);
     calcMovingAverage(price, movingAverage, n);
     calcRSI(price, rsi, n);
@@ -284,9 +281,7 @@ volume[i] > 0) {
         // Calculate portfolio value
         portfolioValue = calcPortfolioValue(price, position, cash, i);
         // Output results
-        printf("Day %d: Price=%.2f, Position=%.2f, Cash=%.2f,
-Portfolio Value=%.2f\n", i, price[i], position[i], cash,
-portfolioValue);
+        printf("Day %d: Price=%.2f, Position=%.2f, Cash=%.2f, Portfolio Value=%.2f\n", i, price[i], position[i], cash, portfolioValue);
 }
     // Calculate and output performance metrics
     double totalReturn = calcTotalReturn(price, position, cash, n);

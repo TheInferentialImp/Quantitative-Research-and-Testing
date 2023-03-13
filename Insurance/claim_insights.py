@@ -28,9 +28,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import geopandas as gpd
-plt.rcParams['figure.figsize'] = [30, 13]
+plt.rcParams['figure.figsize'] = [30, 7.5]
 # read in data from Excel file
-claims_data = pd.read_excel("data.xlsx") # replace with actual claims data
+claims_data = pd.read_excel("/Users/onyx/Documents/Quantitative-Research-and-Testing/data.xlsx") # replace with actual claims data
 
 # convert column names to snake_case
 claims_data.columns = claims_data.columns.str.replace(" ", "_")
@@ -99,7 +99,7 @@ total_incurred_by_state_rounded['Total_Incurred'] = total_incurred_by_state['Tot
 # # Merge total_incurred_by_state with usa_map
 merged = usa_map.merge(total_incurred_by_state_rounded, how='left', left_on='STUSPS', right_index=True)
 merged['Total_Incurred'] = merged['Total_Incurred'].fillna(0)
-merged.plot(column='Total_Incurred', cmap='OrRd', legend=True, figsize=[100, 20])
+merged.plot(column='Total_Incurred', cmap='OrRd', legend=True, figsize=[30, 7.5])
 
 print(merged)
 
