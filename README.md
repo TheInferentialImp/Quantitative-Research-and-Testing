@@ -3,7 +3,7 @@
 Education:
 - Major in C.S. and Information @ UNC Chapel Hill
 - Minor in Business and Statistics
-
+- Associate of Science (Focus in C.S.) @ Central Piedmont Community College (3.9 GPA) (2018-19)
 Skills:
 - Languages: Java, C++, Python, SQL, R, React, GoSQL, Hive, Kafka
 - Version Control/Editors: Git, Eclipse, Visual Studio
