@@ -153,4 +153,6 @@ title('Total Reserve vs Total Incurred', 'FontSize', 14);
 figure('Position', [0 0 800 400]);
 pie(causes_of_loss.total_incurred, causes_of_loss.cause_of_loss);
 title('Causes of Loss', 'FontSize', 14);
-end
+
+
+disp('Data analysis and visualization completed successfully.');

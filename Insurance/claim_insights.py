@@ -21,7 +21,7 @@ Causes of loss using seaborn's barplot function.
 Top claims by total incurred using pandas' plot function.
 Writes all data to a text file called insights.txt created in the directory in which the script is executed.
 The libraries used in this code are pandas, numpy, matplotlib, and seaborn. Pandas is used for data manipulation and analysis, numpy is used for numerical operations, matplotlib is used for data visualization, and seaborn is used for creating more sophisticated visualizations.
-"""
+""",
 
 import pandas as pd
 import numpy as np
@@ -87,8 +87,6 @@ sns.heatmap(data=total_incurred_by_state, cmap='YlOrRd', annot=True, fmt='.2f', 
 plt.title('Total Incurred by State')
 plt.ylabel('Loss State')
 plt.show()
-
-
 
 # Create a heat geo-map(USA) with total incurred by state
 usa = '/Users/onyx/Downloads/cb_2018_us_state_500k/cb_2018_us_state_500k.shp'

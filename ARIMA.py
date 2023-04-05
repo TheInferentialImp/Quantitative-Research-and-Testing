@@ -5,7 +5,7 @@ from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tsa.arima_model import ARIMAResults
 
 # Load the data
-sales_data = pd.read_csv('airline-passengers.csv', header=0, index_col=0, squeeze=True, parse_dates=True)
+sales_data = pd.read_csv('/Users/onyx/Documents/Quantitative-Research-and-Testing/Data/airline-passengers.csv', header=0, index_col=0, squeeze=True, parse_dates=True)
 sales_data.index.freq = 'MS'
 
 # Visualize the data
