@@ -7,7 +7,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 # Load the dataset
-df = pd.read_csv('stroke_data.csv')
+df = pd.read_csv('Data/stroke_data.csv')
 
 # Split the dataset into predictors and target variable
 X = df.drop(['id', 'stroke'], axis=1)

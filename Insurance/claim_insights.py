@@ -89,7 +89,7 @@ plt.ylabel('Loss State')
 plt.show()
 
 # Create a heat geo-map(USA) with total incurred by state
-usa = '/Users/onyx/Downloads/cb_2018_us_state_500k/cb_2018_us_state_500k.shp'
+usa = 'Data/claims_loss.xlsx'
 usa_map = gpd.read_file(usa)
 total_incurred_by_state_rounded = total_incurred_by_state
 total_incurred_by_state_rounded['Total_Incurred'] = total_incurred_by_state['Total_Incurred'].astype(int)
